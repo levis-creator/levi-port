@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-text-color: rgb(39 39 42);
+}
+
+body {
+  color: var(--primary-text-color);
+}
+.swiper {
+  padding-block: 1.5em !important;
+  position: relative !important;
+}
+.swiper-wrapper {
+  margin-top: 1em;
+}
+/* .swiper-pagination {
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: unset !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  width: 2em !important;
+  height: 0.25em !important;
+  border-radius: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.swiper-pagination-bullet-active {
+  height: 0.4em !important;
+  border-radius: 0.8em !important;
+} */
