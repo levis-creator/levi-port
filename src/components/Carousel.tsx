@@ -5,7 +5,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import SkillCard from "./SkillCard";
-const Carousel = () => {
+import { FC } from "react";
+import { ContentType } from "contentful";
+import { SkillData } from "@/lib/types";
+
+interface CarouselProp {
+  data: ContentType[];
+}
+const Carousel: FC<CarouselProp> = ({ data }) => {
   return (
     <Swiper
       modules={[Pagination, Autoplay]}
@@ -30,21 +37,11 @@ const Carousel = () => {
         },
       }}
     >
-      <SwiperSlide>
-        <SkillCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SkillCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SkillCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SkillCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SkillCard />
-      </SwiperSlide>
+      {data.map((skill) => (
+        <SwiperSlide key={skill.sys.id}>
+          <SkillCard data={skill.fields as any} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };

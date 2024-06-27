@@ -1,24 +1,27 @@
 import Image from "next/image";
 import Button from "../ui/Button";
 import Head from "../Head";
-
-const AboutSection = () => {
+import { get_data } from "@/lib/get_data";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { AxiosResponse } from "axios";
+import Link from "next/link";
+interface AboutData {
+  about: string;
+  description: any;
+  cv: string;
+}
+const AboutSection = async () => {
+  const about: AxiosResponse<AboutData> = await get_data("/about");
   return (
     <section id="about" className="px-8 py-8 md:px-8 lg:px-28 ">
       <Head title="About me" />
       <div className="flex flex-col gap-5 lg:flex-row-reverse">
-        <div className="flex-1">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim unde
-            sit, tenetur quia officiis at soluta vitae pariatur praesentium
-            nemo! Minus commodi maxime iusto corporis eligendi sequi, optio
-            quaerat et. Lorem ipsum, dolor sit amet consectetur adipisicing
-            elit. Dolorem voluptate odio animi eos repudiandae cum neque nemo
-            sed. Veniam necessitatibus cupiditate atque sint corporis eum culpa
-            enim iusto non alias.
-          </p>
+        <div className="flex-1 leading-relaxed">
+          {documentToReactComponents(about.data.description)}
           <div className="mt-8">
-            <Button>Download Cv</Button>
+            <Link target="_blank" href={about.data.cv}>
+              <Button>Download Cv</Button>
+            </Link>
           </div>
         </div>
         <div className="lg:relative lg:flex-1">
