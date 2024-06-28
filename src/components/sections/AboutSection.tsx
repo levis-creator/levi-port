@@ -6,7 +6,7 @@ import Head from "../Head";
 import Button from "../ui/Button";
 interface AboutData {
   about: string;
-  description: any;
+  description?: any;
   cv: string;
 }
 const AboutSection = async () => {
