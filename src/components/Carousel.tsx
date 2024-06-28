@@ -1,13 +1,12 @@
 "use client";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { ContentType } from "contentful";
+import { FC } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import SkillCard from "./SkillCard";
-import { FC } from "react";
-import { ContentType } from "contentful";
-import { SkillData } from "@/lib/types";
 
 interface CarouselProp {
   data: ContentType[];

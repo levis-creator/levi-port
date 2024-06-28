@@ -1,8 +1,8 @@
 import { get_data } from "@/lib/get_data";
-import Carousel from "../Carousel";
-import Head from "../Head";
 import { AxiosResponse } from "axios";
 import { ContentType } from "contentful";
+import Carousel from "../Carousel";
+import Head from "../Head";
 
 const SkillsSection = async () => {
   const skillsData: AxiosResponse<ContentType[]> = await get_data("/skills");

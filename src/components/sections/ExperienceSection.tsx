@@ -1,6 +1,5 @@
-import React from "react";
-import Head from "../Head";
 import ExperienceCard from "../ExperienceCard";
+import Head from "../Head";
 
 const ExperienceSection = () => {
   return (

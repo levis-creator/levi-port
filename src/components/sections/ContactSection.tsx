@@ -1,6 +1,6 @@
 import { Send } from "lucide-react";
-import Head from "../Head";
 import ContactForm from "../ContactForm";
+import Head from "../Head";
 
 const ContactSection = () => {
   return (

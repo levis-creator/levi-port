@@ -1,7 +1,7 @@
 "use client";
 import { useForm } from "react-hook-form";
-import TextInput from "./ui/TextInput";
 import TextAreaInput from "./ui/TextAreaInput";
+import TextInput from "./ui/TextInput";
 
 const ContactForm = () => {
   const { register, formState: errors } = useForm();

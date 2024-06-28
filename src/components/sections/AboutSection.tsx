@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Button from "../ui/Button";
-import Head from "../Head";
 import { get_data } from "@/lib/get_data";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { AxiosResponse } from "axios";
+import Image from "next/image";
 import Link from "next/link";
+import Head from "../Head";
+import Button from "../ui/Button";
 interface AboutData {
   about: string;
   description: any;

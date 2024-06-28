@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, ReactNode, useEffect, useState } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 type ButtonType = "primary" | "outlined";
 type ButtonProps = {
   children: ReactNode;
