@@ -10,7 +10,7 @@ interface AboutData {
   cv: string;
 }
 const AboutSection = async () => {
-  const about: AboutData = await get_data("/about");
+  const about: AboutData = await get_data("about");
   return (
     <section id="about" className="px-8 py-8 md:px-8 lg:px-28 ">
       <Head title="About me" />
