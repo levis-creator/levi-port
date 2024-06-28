@@ -15,7 +15,7 @@ const AboutSection = async () => {
         <div className="flex-1 leading-relaxed">
           {documentToReactComponents(about?.description)}
           <div className="mt-8">
-            <Link target="_blank" href={about.cv}>
+            <Link target="_blank" href={about.cv || ""}>
               <Button>Download Cv</Button>
             </Link>
           </div>
