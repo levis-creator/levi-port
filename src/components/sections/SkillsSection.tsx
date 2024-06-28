@@ -1,5 +1,4 @@
 import { get_data } from "@/lib/get_data";
-import { AxiosResponse } from "axios";
 import { ContentType } from "contentful";
 import Carousel from "../Carousel";
 import Head from "../Head";

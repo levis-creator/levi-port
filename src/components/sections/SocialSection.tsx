@@ -2,7 +2,7 @@ import { Linkedin } from "lucide-react";
 
 const SocialSection = () => {
   return (
-    <section className="px-8 md:px-8 py-28 bg-slate-100 ">
+    <section id="contact" className="px-8 md:px-8 py-28 bg-slate-100 ">
       <div className="flex flex-col text-center gap-14">
         <h2 className="text-3xl font-black">
           Do you have any projects? Let&apos;s talk

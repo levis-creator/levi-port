@@ -4,11 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "../Head";
 import Button from "../ui/Button";
-interface AboutData {
-  about: string;
-  description?: any;
-  cv: string;
-}
+import { AboutData } from "@/lib/types";
+
 const AboutSection = async () => {
   const about: AboutData = await get_data("about");
   return (

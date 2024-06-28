@@ -3,3 +3,8 @@ export interface SkillData {
   percentage: number;
   color: string;
 }
+export interface AboutData {
+  about: string;
+  description: any;
+  cv: string;
+}
