@@ -1,6 +1,5 @@
 import { get_data } from "@/lib/get_data";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { AxiosResponse } from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "../Head";
@@ -11,15 +10,15 @@ interface AboutData {
   cv: string;
 }
 const AboutSection = async () => {
-  const about: AxiosResponse<AboutData> = await get_data("/about");
+  const about: AboutData = await get_data("/about");
   return (
     <section id="about" className="px-8 py-8 md:px-8 lg:px-28 ">
       <Head title="About me" />
       <div className="flex flex-col gap-5 lg:flex-row-reverse">
         <div className="flex-1 leading-relaxed">
-          {documentToReactComponents(about.data.description)}
+          {documentToReactComponents(about.description)}
           <div className="mt-8">
-            <Link target="_blank" href={about.data.cv}>
+            <Link target="_blank" href={about.cv}>
               <Button>Download Cv</Button>
             </Link>
           </div>

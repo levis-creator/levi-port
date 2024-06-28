@@ -1,6 +1,12 @@
-import { base_url } from "./base_url";
-
 export const get_data = async (endpoint: string) => {
-  const data = await base_url.get(`${endpoint}`);
-  return data;
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+    const response = await fetch(`${baseUrl}/${endpoint}`, {
+      cache: "no-store",
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
