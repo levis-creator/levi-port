@@ -13,7 +13,7 @@ const AboutSection = async () => {
       <Head title="About me" />
       <div className="flex flex-col gap-5 lg:flex-row-reverse">
         <div className="flex-1 leading-relaxed">
-          {documentToReactComponents(about.description)}
+          {documentToReactComponents(about?.description)}
           <div className="mt-8">
             <Link target="_blank" href={about.cv}>
               <Button>Download Cv</Button>
