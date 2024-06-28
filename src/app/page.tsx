@@ -1,5 +1,6 @@
 import AboutSection from "@/components/sections/AboutSection";
 import HomeSection from "@/components/sections/HomeSection";
+import ServicesSection from "@/components/sections/ServicesSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import WorksSection from "@/components/sections/WorksSection";
 
@@ -10,8 +11,8 @@ export default function Home() {
       <AboutSection />
       <SkillsSection />
       <WorksSection />
-      {/* <ServicesSection />
-      <ExperienceSection />
+      <ServicesSection />
+      {/* <ExperienceSection />
       <StatisticsSection />
       <ContactSection />
       <SocialSection /> */}
