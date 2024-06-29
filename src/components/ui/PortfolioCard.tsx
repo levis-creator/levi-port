@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC, useState } from "react";
 interface PortfolioCardProps {
-  data: ProjectData;
+  data?: ProjectData;
 }
 
 const PortfolioCard: FC<PortfolioCardProps> = ({ data }) => {
-  const image = "https://" + data.projectImage.fields.file.url;
+  const image = "https://" + data?.projectImage.fields.file.url;
   const [isHovered, setIsHovered] = useState(false);
   const handleHover = () => {
     setIsHovered(true);
@@ -37,7 +37,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ data }) => {
       )}
       <Image
         src={image}
-        alt={data.title}
+        alt={data?.title || ""}
         width={0}
         height={0}
         className="w-full h-full object-cover"
