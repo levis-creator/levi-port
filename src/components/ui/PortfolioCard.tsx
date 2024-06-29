@@ -29,9 +29,9 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ data }) => {
         <div className="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-black hover:flex justify-center items-center opacity-85">
           <Link
             className="text-white hover:underline hover:underline-offset-8 opacity-100"
-            href={data.link}
+            href={data?.link || ""}
           >
-            {data.title}
+            {data?.title}
           </Link>
         </div>
       )}
