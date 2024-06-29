@@ -18,8 +18,8 @@ export default function Home() {
         <AboutSection />
         <SkillsSection />
         <WorksSection />
-        {/* <ExperienceSection />
-        <ServicesSection />
+        <ExperienceSection />
+        {/* <ServicesSection />
         <StatisticsSection />
         <ContactSection />
         <SocialSection /> */}
