@@ -1,8 +1,7 @@
 import { get_data } from "@/lib/get_data";
+import { ContentType } from "contentful";
 import Head from "../Head";
 import PortfolioCard from "../ui/PortfolioCard";
-import { ContentType } from "contentful";
-import { ProjectData } from "@/lib/types";
 
 const WorksSection = async () => {
   const works: ContentType[] = await get_data("projects");
