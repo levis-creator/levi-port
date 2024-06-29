@@ -1,7 +1,11 @@
+import { get_data } from "@/lib/get_data";
 import Head from "../Head";
 import PortfolioCard from "../ui/PortfolioCard";
+import { ContentType } from "contentful";
+import { ProjectData } from "@/lib/types";
 
-const WorksSection = () => {
+const WorksSection = async () => {
+  const works: ContentType[] = await get_data("projects");
   return (
     <section id="work" className="px-8 py-8 md:px-8 lg:px-28 ">
       {" "}
@@ -10,11 +14,9 @@ const WorksSection = () => {
         className="grid sm:grid-cols-2 md:grid-cols-3 md:grid-rows-2 lg:grid-cols-4 gap-4 lg:grid-flow-col
       "
       >
-        <PortfolioCard />
-        <PortfolioCard />
-        <PortfolioCard />
-        <PortfolioCard />
-        <PortfolioCard />
+        {works.map((data) => (
+          <PortfolioCard key={data.sys.id} data={data.fields as any} />
+        ))}
       </div>
     </section>
   );
