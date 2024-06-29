@@ -25,3 +25,12 @@ export interface ExperienceData {
   description: string;
   city: string;
 }
+export interface ServiceData {
+  serviceName: string;
+  icon: any;
+}
+
+export interface Navlink {
+  label: string;
+  link: string;
+}

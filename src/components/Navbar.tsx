@@ -1,10 +1,9 @@
 "use client";
+import { navlinks } from "@/lib/static_data";
+import { Navlink } from "@/lib/types";
 import { AlignJustify, X } from "lucide-react";
 import { forwardRef, useEffect, useRef, useState } from "react";
-type Navlink = {
-  label: string;
-  link: "";
-};
+
 type NavlinksProps = {
   navlinks: Navlink[];
   className?: String;
@@ -26,32 +25,6 @@ const Navlinks = forwardRef(function Navlinks(
   );
 });
 const Navbar = () => {
-  const navlinks: Navlink[] = [
-    {
-      label: "Home",
-      link: "",
-    },
-    {
-      label: "Resume",
-      link: "",
-    },
-    {
-      label: "Services",
-      link: "",
-    },
-    {
-      label: "Skills",
-      link: "",
-    },
-    {
-      label: "Projects",
-      link: "",
-    },
-    {
-      label: "Contact",
-      link: "",
-    },
-  ];
   const [collapse, setCollapse] = useState<boolean>(false);
   const navlinksRef = useRef<HTMLElement>(null);
   useEffect(() => {
