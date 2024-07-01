@@ -6,7 +6,7 @@ import PortfolioCard from "../ui/PortfolioCard";
 const WorksSection = async () => {
   const works: ContentType[] = await get_data("projects");
   return (
-    <section id="work" className="px-8 py-8 md:px-8 lg:px-28 ">
+    <section id="projects" className="px-8 py-8 md:px-8 lg:px-28 ">
       {" "}
       <Head title="Works" />
       <div

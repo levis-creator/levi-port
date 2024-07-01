@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../ui/Button";
+import { profile } from "@/lib/static_data";
 
 const HomeSection = () => {
   return (
@@ -11,10 +12,10 @@ const HomeSection = () => {
           </h4>
           <span className="text-3xl text-wrap xl:text-5xl">
             I&apos;m{" "}
-            <h1 className="inline font-extrabold text">Levis Nyingi</h1>{" "}
+            <h1 className="inline font-extrabold text">{profile.name}</h1>{" "}
           </span>
           <p className="text-2xl font-medium capitalize xl:text-4xl">
-            A software engineer
+            A {profile.career}
           </p>
 
           <div className="inline-flex gap-3">
@@ -24,7 +25,7 @@ const HomeSection = () => {
         </div>
         <div className="relative bottom-0 h-3/5 lg:flex-1">
           <Image
-            src={"./levis_the_software_engineer.png"}
+            src={profile.image}
             alt="image of levis"
             width={0}
             height={0}

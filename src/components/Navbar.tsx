@@ -2,6 +2,7 @@
 import { navlinks } from "@/lib/static_data";
 import { Navlink } from "@/lib/types";
 import { AlignJustify, X } from "lucide-react";
+import Link from "next/link";
 import { forwardRef, useEffect, useRef, useState } from "react";
 
 type NavlinksProps = {
@@ -19,7 +20,9 @@ const Navlinks = forwardRef(function Navlinks(
   return (
     <ul className={`${className} `} ref={navRef}>
       {navlinks.map((navItem: Navlink, i) => (
-        <li key={i}>{navItem.label}</li>
+        <li key={i}>
+          <Link href={navItem.link}>{navItem.label}</Link>
+        </li>
       ))}
     </ul>
   );

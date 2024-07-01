@@ -1,9 +1,3 @@
-import {
-  ContentType,
-  ContentTypeAllowedResources,
-  ContentTypeFieldType,
-} from "contentful";
-
 export interface SkillData {
   skill: string;
   percentage: number;
@@ -33,4 +27,9 @@ export interface ServiceData {
 export interface Navlink {
   label: string;
   link: string;
+}
+export interface StatisticData {
+  data: number;
+  title: string;
+  percentage?: boolean;
 }

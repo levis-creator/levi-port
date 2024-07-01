@@ -9,7 +9,7 @@ import { AboutData } from "@/lib/types";
 const AboutSection = async () => {
   const about: AboutData = await get_data("about");
   return (
-    <section id="about" className="px-8 py-8 md:px-8 lg:px-28 ">
+    <section id="resume" className="px-8 py-8 md:px-8 lg:px-28 ">
       <Head title="About me" />
       <div className="flex flex-col gap-5 lg:flex-row-reverse">
         <div className="flex-1 leading-relaxed">

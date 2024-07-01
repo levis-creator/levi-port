@@ -1,28 +1,50 @@
-import { Navlink } from "./types";
-
+import { Navlink, StatisticData } from "./types";
+// Navbar Data
 export const navlinks: Navlink[] = [
   {
     label: "Home",
-    link: "",
+    link: "#home",
   },
   {
     label: "Resume",
-    link: "",
+    link: "#resume",
   },
   {
     label: "Services",
-    link: "",
+    link: "#services",
   },
   {
     label: "Skills",
-    link: "",
+    link: "#skills",
   },
   {
     label: "Projects",
-    link: "",
+    link: "#projects",
   },
   {
     label: "Contact",
-    link: "",
+    link: "#contact",
+  },
+];
+// Home Section
+export const profile = {
+  name: "Levis Nyingi",
+  career: "Software Developer",
+  image: "./levis_the_software_engineer.png",
+};
+
+export const statistics: StatisticData[] = [
+  {
+    title: "Projects",
+    data: 50,
+  },
+  {
+    title: "Clients",
+    data: 15,
+  },
+  {
+    title: "Return clients",
+    data: 72,
+    percentage: true,
   },
 ];

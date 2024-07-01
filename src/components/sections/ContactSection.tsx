@@ -4,7 +4,7 @@ import Head from "../Head";
 
 const ContactSection = () => {
   return (
-    <section className="px-8 py-8 md:px-8 lg:px-28">
+    <section id="contact" className="px-8 py-8 md:px-8 lg:px-28">
       <Head title="Get in Touch" />
       <div className="flex flex-col-reverse gap-5 lg:flex-row">
         <ul className="flex flex-col flex-1 gap-5">
