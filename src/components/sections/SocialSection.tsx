@@ -30,6 +30,7 @@ const SocialIcon = ({ data }: { data?: SocialLink }) => {
   return (
     <li>
       <Link
+        target="_blank"
         href={data?.link || ""}
         className="flex flex-col items-center justify-center gap-2 sm:flex-row"
       >
