@@ -39,3 +39,8 @@ export interface MessageData {
   subject: string;
   message: string;
 }
+export interface SocialLink {
+  title: string;
+  icons: any;
+  link: string;
+}
