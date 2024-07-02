@@ -33,3 +33,9 @@ export interface StatisticData {
   title: string;
   percentage?: boolean;
 }
+export interface MessageData {
+  username: string;
+  email: string;
+  subject: string;
+  message: string;
+}

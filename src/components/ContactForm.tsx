@@ -1,17 +1,62 @@
 "use client";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import TextAreaInput from "./ui/TextAreaInput";
 import TextInput from "./ui/TextInput";
+import { MessageData } from "@/lib/types";
+import { send, sendForm } from "@emailjs/browser";
+import { ReactElement, ReactNode, useRef, useState } from "react";
+import SuccessAlert from "./ui/SuccessAlert";
+import ErrorAlert from "./ui/ErrorAlert";
 
 const ContactForm = () => {
-  const { register, formState: errors } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: errors,
+  } = useForm<MessageData>();
+  const [success, setSuccess] = useState<boolean | null>(null);
+  const loading = useRef<boolean>(false);
+  const alert = success ? (
+    <SuccessAlert />
+  ) : success == false ? (
+    <ErrorAlert />
+  ) : null;
+  const sendEmail: SubmitHandler<MessageData> = async (data, e) => {
+    e?.preventDefault();
+    loading.current = true;
+    await send(
+      process.env.NEXT_PUBLIC_SERVICE_ID as string,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
+      data as Record<string, any>,
+      {
+        publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+      }
+    )
+      .then((res) => {
+        if (res.status == 200) {
+          setSuccess(true);
+          loading.current = false;
+          reset();
+        } else {
+          setSuccess(false);
+          loading.current = false;
+        }
+      })
+      .catch((err) => console.log(err));
+  };
   return (
-    <form className="flex flex-col flex-1 gap-4">
+    <form
+      method="post"
+      onSubmit={handleSubmit(sendEmail)}
+      className="flex flex-col flex-1 gap-4"
+    >
+      {alert}
       <TextInput
-        name="name"
+        name="username"
         register={register}
         errors={errors}
-        placeholder="name"
+        placeholder="Firstname and Lastname"
         type="text"
         isRequired={true}
       />
@@ -24,7 +69,7 @@ const ContactForm = () => {
         isRequired={true}
       />
       <TextInput
-        name="Subject"
+        name="subject"
         register={register}
         errors={errors}
         placeholder="Subject"
@@ -32,14 +77,18 @@ const ContactForm = () => {
         isRequired={true}
       />
       <TextAreaInput
-        name="Subject"
+        name="message"
         register={register}
         errors={errors}
-        placeholder="Subject"
+        placeholder="Message"
         isRequired={true}
       />
-      <button className="w-full py-3 text-white bg-primary-blue">
-        Send Message
+      <button
+        type="submit"
+        className="w-full py-3 text-white bg-primary-blue"
+        disabled={loading.current}
+      >
+        {loading.current ? "Sending message..." : "Send Message"}
       </button>
     </form>
   );

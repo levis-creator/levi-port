@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.22.1",
+    "@emailjs/browser": "^4.3.3",
     "@types/randomcolor": "^0.5.9",
     "@types/react-slick": "^0.23.13",
     "axios": "^1.7.2",

@@ -43,8 +43,14 @@ export const statistics: StatisticData[] = [
     data: 15,
   },
   {
-    title: "Return clients",
+    title: "Return Clients",
     data: 72,
     percentage: true,
   },
 ];
+
+export const contactDetails = {
+  location: "A104 Waiyaki Way, Nairobi, 00100, Kenya",
+  email: "levis.nyingi@gmail.com",
+  website: "levisnyingi.com",
+};

@@ -30,7 +30,7 @@ const TextAreaInput: React.FC<{
           name={name}
           id={name}
           rows={3}
-          className="block  w-full rounded-md border-0 px-3 py-1.5 bg-transparent text-slate-900 bg-slate-100 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+          className="block  w-full rounded-md border-0 px-3 py-1.5 text-slate-900 bg-slate-100 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
           defaultValue={""}
           placeholder={placeholder}
         />
