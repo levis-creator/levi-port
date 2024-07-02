@@ -1,12 +1,12 @@
 "use client";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { MessageData } from "@/lib/types";
+import { send } from "@emailjs/browser";
+import { useRef, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import ErrorAlert from "./ui/ErrorAlert";
+import SuccessAlert from "./ui/SuccessAlert";
 import TextAreaInput from "./ui/TextAreaInput";
 import TextInput from "./ui/TextInput";
-import { MessageData } from "@/lib/types";
-import { send, sendForm } from "@emailjs/browser";
-import { ReactElement, ReactNode, useRef, useState } from "react";
-import SuccessAlert from "./ui/SuccessAlert";
-import ErrorAlert from "./ui/ErrorAlert";
 
 const ContactForm = () => {
   const {
