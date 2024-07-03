@@ -49,7 +49,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-10">
       <nav className="flex items-center justify-between px-3 py-6 bg-white rounded-md shadow-md md:px-8 lg:px-28">
         {/* logo */}
-        <div className="font-bold">Logo</div>
+        <div className="text-4xl logo">LN</div>
         {/* navlinks */}
         <button
           onClick={() => setCollapse(!collapse)}
