@@ -1,3 +1,4 @@
+import BlogCard from "@/components/BlogCard";
 import { get_data } from "@/lib/get_data";
 import { ContentType } from "contentful";
 import Image from "next/image";
@@ -21,7 +22,7 @@ const Page = async () => {
           </div>
         </div>
       </div>
-      {/* <div className="px-8 py-8 md:px-8 lg:px-28 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="px-8 py-8 md:px-8 lg:px-28 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {blogs.map((blog) => (
           <BlogCard
             key={blog.sys.id}
@@ -29,7 +30,7 @@ const Page = async () => {
             id={blog.sys.id}
           />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
