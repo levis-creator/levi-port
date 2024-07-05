@@ -1,13 +1,11 @@
-import BlogCard from "@/components/BlogCard";
 import { get_data } from "@/lib/get_data";
 import { ContentType } from "contentful";
-import Image from "next/image";
 
 const Page = async () => {
   const blogs: ContentType[] = await get_data("articles");
   return (
     <div className="pb-28">
-      <div className="w-full h-56 relative">
+      {/* <div className="w-full h-56 relative">
         <div className=" w-full h-full before:contents[''] before:absolute before:top-0 before:bottom-0 before:right-0 before:left-0 before:bg-black before:opacity-50">
           <Image
             src={"/rupixen-HhNe16wgVFg-unsplash.jpg"}
@@ -30,7 +28,7 @@ const Page = async () => {
             id={blog.sys.id}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
