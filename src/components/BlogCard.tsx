@@ -2,7 +2,7 @@ import { BlogData } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 
-const BlogCard = ({ data, id }: { data?: BlogData; id: string }) => {
+const BlogCard = ({ data, id }: { data?: BlogData; id?: string }) => {
   const image = "https://" + data?.cardImage.fields.file.url;
   image;
   const truncate = (input: string) =>

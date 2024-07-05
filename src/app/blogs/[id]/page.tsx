@@ -32,23 +32,23 @@ const Page = async ({
   }
   return (
     <main className="px-5 sm:px-10 py-8 min-h-screen lg:px-44 xl:px-80 2xl:px-96">
-      <h1 className="font-bold text-3xl py-5 ">{data.title}</h1>
+      <h1 className="font-bold text-3xl py-5 ">{data?.title}</h1>
       <p>
         Published on{" "}
-        <time dateTime={convertISOToDateString(data.createdAt)}>
-          {formatDate(data.createdAt)}
+        <time dateTime={convertISOToDateString(data?.createdAt)}>
+          {formatDate(data?.createdAt)}
         </time>
       </p>
       <Image
         src={image}
-        alt={data.title}
+        alt={data?.title}
         height={0}
         width={0}
         className="w-full h-80 object-cover"
         unoptimized
       />
       <article className="space-y-3 mt-12 article">
-        {documentToReactComponents(data.blog)}
+        {documentToReactComponents(data?.blog)}
       </article>
     </main>
   );
