@@ -44,3 +44,9 @@ export interface SocialLink {
   icons: any;
   link: string;
 }
+export interface BlogData {
+  title: string;
+  cardImage: any;
+  description: any;
+  blog?: any;
+}

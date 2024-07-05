@@ -3,27 +3,31 @@ import { Navlink, StatisticData } from "./types";
 export const navlinks: Navlink[] = [
   {
     label: "Home",
-    link: "#home",
+    link: "/#home",
   },
   {
     label: "Resume",
-    link: "#resume",
+    link: "/#resume",
   },
   {
     label: "Services",
-    link: "#services",
+    link: "/#services",
   },
   {
     label: "Skills",
-    link: "#skills",
+    link: "/#skills",
   },
   {
     label: "Projects",
-    link: "#projects",
+    link: "/#projects",
   },
   {
     label: "Contact",
-    link: "#contact",
+    link: "/#contact",
+  },
+  {
+    label: "Blog",
+    link: "/blogs",
   },
 ];
 // Home Section
