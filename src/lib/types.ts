@@ -49,4 +49,5 @@ export interface BlogData {
   cardImage: any;
   description: any;
   blog?: any;
+  createdAt: string;
 }

@@ -41,3 +41,10 @@ body {
   height: 0.4em !important;
   border-radius: 0.8em !important;
 } */
+code {
+  background-color: #f0f0f0;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+}

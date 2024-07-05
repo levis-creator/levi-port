@@ -24,7 +24,11 @@ const Page = async () => {
       </div>
       <div className="px-8 py-8 md:px-8 lg:px-28 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {blogs.map((blog) => (
-          <BlogCard key={blog.sys.id} data={blog.fields as any} />
+          <BlogCard
+            key={blog.sys.id}
+            data={blog.fields as any}
+            id={blog.sys.id}
+          />
         ))}
       </div>
     </div>

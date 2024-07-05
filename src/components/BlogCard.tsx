@@ -2,7 +2,7 @@ import { BlogData } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 
-const BlogCard = ({ data }: { data?: BlogData }) => {
+const BlogCard = ({ data, id }: { data?: BlogData; id: string }) => {
   const image = "https://" + data?.cardImage.fields.file.url;
   image;
   const truncate = (input: string) =>
@@ -22,7 +22,7 @@ const BlogCard = ({ data }: { data?: BlogData }) => {
       <div className=" ">
         <h3 className="font-bold my-1">{data?.title}</h3>
         <p className="inline">{truncate(data?.description)}</p>
-        <Link href={"#"} className="text-primary-blue">
+        <Link href={`/blogs/${id}`} className="text-primary-blue">
           Read article
         </Link>
       </div>
