@@ -1,5 +1,7 @@
 import { get_data } from "@/lib/get_data";
 import { BlogData } from "@/lib/types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Image from "next/image";
 import "./article.css";
 const Page = async ({
   params,
@@ -30,7 +32,7 @@ const Page = async ({
   }
   return (
     <main className="px-5 sm:px-10 py-8 min-h-screen lg:px-44 xl:px-80 2xl:px-96">
-      {/* <h1 className="font-bold text-3xl py-5 ">{data?.title}</h1>
+      <h1 className="font-bold text-3xl py-5 ">{data?.title}</h1>
       <p>
         Published on{" "}
         <time dateTime={convertISOToDateString(data?.createdAt)}>
@@ -47,7 +49,7 @@ const Page = async ({
       />
       <article className="space-y-3 mt-12 article">
         {documentToReactComponents(data?.blog)}
-      </article> */}
+      </article>
     </main>
   );
 };
