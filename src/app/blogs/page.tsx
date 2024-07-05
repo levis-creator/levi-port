@@ -1,8 +1,11 @@
 import BlogCard from "@/components/BlogCard";
 import { get_data } from "@/lib/get_data";
 import { ContentType } from "contentful";
+import { Metadata } from "next";
 import Image from "next/image";
-
+export const metadata: Metadata = {
+  title: "Blogs",
+};
 const Page = async () => {
   const blogs: ContentType[] = await get_data("articles");
   return (

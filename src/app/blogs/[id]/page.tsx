@@ -3,6 +3,35 @@ import { BlogData } from "@/lib/types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import "./article.css";
+
+import type { Metadata } from "next";
+import { ContentType } from "contentful";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const { id } = params;
+  const data: BlogData = await get_data(`articles/${id}`);
+  const image = "https://" + data?.cardImage.fields.file.url;
+  return {
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      images: {
+        url: image,
+      },
+    },
+  };
+}
+
+export async function generateStaticParams() {
+  const blogs: ContentType[] = await get_data("articles");
+  return blogs.map((blog) => ({
+    id: blog.sys.id,
+  }));
+}
 const Page = async ({
   params,
 }: {
