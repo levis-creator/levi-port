@@ -13,11 +13,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     {
       url: `${process.env.NEXT_PUBLIC_URL}`,
-      priority: 1,
+      priority: 1.0,
     },
     {
       url: `${process.env.NEXT_PUBLIC_URL}/blogs`,
-      priority: 2,
+      priority: 0.9,
     },
     ...blogsEntries,
   ];
