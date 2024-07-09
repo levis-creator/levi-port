@@ -28,12 +28,20 @@ export async function generateMetadata({
     description: data.description,
     keywords: data.keywords,
     openGraph: {
-      images: {
-        url: image,
-        width: 1200,
-        height: 630,
-        alt: data.title,
-      },
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: data.title,
+        },
+        {
+          url: image,
+          width: 400,
+          height: 400,
+          alt: data.title,
+        },
+      ],
       title: data.title,
       description: data.description,
       type: "article",
