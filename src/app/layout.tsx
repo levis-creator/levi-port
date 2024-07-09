@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Provider from "@/context/Provider";
+import AdsenseScript from "@/components/AdsenseScript";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth min-h-screen">
+      <head>
+        <AdsenseScript pid={`${process.env.NEXT_PUBLIC_PID}`} />
+      </head>
       <body className={inter.className}>
         <Navbar />
         <Provider>{children}</Provider>
