@@ -1,12 +1,19 @@
 import { get_data } from "@/lib/get_data";
 import { BlogData } from "@/lib/types";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import {
+  documentToReactComponents,
+  Options,
+} from "@contentful/rich-text-react-renderer";
+
 import Image from "next/image";
 import "./article.css";
 
 import type { Metadata } from "next";
 import { ContentType } from "contentful";
 import { convertISOToDateString, formatDate } from "@/lib/date_converters";
+import { MARKS } from "@contentful/rich-text-types";
+import hljs from "highlight.js";
+import javascript from "highlight.js/lib/languages/javascript";
 
 export async function generateMetadata({
   params,
@@ -44,6 +51,13 @@ const Page = async ({
   const { id } = params;
   const data: BlogData = await get_data(`articles/${id}`);
   const image = "https://" + data?.cardImage.fields.file.url;
+  hljs.registerLanguage("js", javascript);
+  const options: Options = {
+    preserveWhitespace: true,
+    renderMark: {
+      [MARKS.CODE]: (text) => <code className="js">{text}</code>,
+    },
+  };
 
   return (
     <main className="px-5 sm:px-10 py-8 min-h-screen lg:px-44 xl:px-80 2xl:px-96">
@@ -63,7 +77,7 @@ const Page = async ({
         unoptimized
       />
       <article className="space-y-3 mt-12 article">
-        {documentToReactComponents(data?.blog)}
+        {documentToReactComponents(data?.blog, options)}
       </article>
     </main>
   );
