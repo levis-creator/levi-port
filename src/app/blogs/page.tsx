@@ -25,7 +25,6 @@ const Page = async () => {
           </div>
         </div>
       </div>
-            data={blog.fields as any}
       <Blogs />
     </div>
   );
