@@ -13,11 +13,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     {
       url: `${process.env.NEXT_PUBLIC_URL}`,
-      priority: 1,
     },
     {
       url: `${process.env.NEXT_PUBLIC_URL}/blogs`,
-      priority: 0.9,
     },
     ...blogsEntries,
   ];
