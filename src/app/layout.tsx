@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  keywords:
+    "levis nyingi, levis sale kenya, levis outlet kenya, best places to find cheap levis in kenya, java developer kenya",
 };
 
 export default function RootLayout({
