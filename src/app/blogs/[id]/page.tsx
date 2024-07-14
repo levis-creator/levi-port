@@ -24,10 +24,11 @@ export async function generateMetadata({
   const { id } = params;
   const data: BlogData = await get_data(`articles/${id}`);
   const image = "https://" + data?.cardImage.fields.file.url;
+  const keyword_con = keyword_convertor(data.keywords as string);
   return {
     title: data.title,
     description: data.description,
-    keywords: keyword_convertor(data.keywords as string),
+    keywords: keyword_con,
     openGraph: {
       images: [
         {
