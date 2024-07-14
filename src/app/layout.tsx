@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Provider from "@/context/Provider";
 import AdsenseScript from "@/components/AdsenseScript";
+import { URL } from "url";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,16 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
-  keywords:
-    "levis nyingi, levis sale kenya, levis outlet kenya, best places to find cheap levis in kenya, java developer kenya",
+  keywords: [
+    "levis nyingi",
+    "levis sale kenya",
+    "levis outlet kenya",
+    "best places to find cheap levis in kenya",
+    "java developer kenya",
+  ],
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL as string),
+  creator: "Levis Nyingi",
+  authors: [{ name: "Levis Nyingi" }],
 };
 
 export default function RootLayout({

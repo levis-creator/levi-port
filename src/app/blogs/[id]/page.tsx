@@ -14,6 +14,7 @@ import { convertISOToDateString, formatDate } from "@/lib/date_converters";
 import { MARKS } from "@contentful/rich-text-types";
 import hljs from "highlight.js";
 import javascript from "highlight.js/lib/languages/javascript";
+import { keyword_convertor } from "@/lib/keywords_converter";
 
 export async function generateMetadata({
   params,
@@ -26,7 +27,7 @@ export async function generateMetadata({
   return {
     title: data.title,
     description: data.description,
-    keywords: data.keywords,
+    keywords: keyword_convertor(data.keywords as string),
     openGraph: {
       images: [
         {
@@ -48,6 +49,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
+    },
+    alternates: {
+      canonical: `/blogs/${id}`,
     },
   };
 }
