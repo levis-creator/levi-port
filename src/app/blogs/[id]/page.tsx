@@ -8,13 +8,13 @@ import {
 import Image from "next/image";
 import "./article.css";
 
-import type { Metadata } from "next";
-import { ContentType } from "contentful";
 import { convertISOToDateString, formatDate } from "@/lib/date_converters";
+import { keyword_converter } from "@/lib/keywords_converter";
 import { MARKS } from "@contentful/rich-text-types";
+import { ContentType } from "contentful";
 import hljs from "highlight.js";
 import javascript from "highlight.js/lib/languages/javascript";
-import { keyword_convertor } from "@/lib/keywords_converter";
+import type { Metadata } from "next";
 
 export async function generateMetadata({
   params,
@@ -24,7 +24,7 @@ export async function generateMetadata({
   const { id } = params;
   const data: BlogData = await get_data(`articles/${id}`);
   const image = "https://" + data?.cardImage.fields.file.url;
-  const keyword_con = keyword_convertor(data.keywords as string);
+  const keyword_con = keyword_converter(data.keywords as string);
   return {
     title: data.title,
     description: data.description,
