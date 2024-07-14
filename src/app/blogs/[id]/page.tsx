@@ -28,7 +28,7 @@ export async function generateMetadata({
   return {
     title: data.title,
     description: data.description,
-    keywords: keyword_con,
+    keywords: keyword_con || [""],
     openGraph: {
       images: [
         {
