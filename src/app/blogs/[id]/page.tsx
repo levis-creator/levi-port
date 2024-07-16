@@ -15,6 +15,7 @@ import { ContentType } from "contentful";
 import hljs from "highlight.js";
 import javascript from "highlight.js/lib/languages/javascript";
 import type { Metadata } from "next";
+import ShareIcons from "@/components/ShareIcons";
 
 export async function generateMetadata({
   params,
@@ -73,6 +74,7 @@ const Page = async ({
   const { id } = params;
   const data: BlogData = await get_data(`articles/${id}`);
   const image = "https://" + data?.cardImage.fields.file.url;
+  const url = process.env.NEXT_PUBLIC_URL + `/blogs/${id}`;
   hljs.registerLanguage("js", javascript);
   const options: Options = {
     preserveWhitespace: true,
@@ -101,6 +103,7 @@ const Page = async ({
       <article className="space-y-3 mt-12 article">
         {documentToReactComponents(data?.blog, options)}
       </article>
+      <ShareIcons url={url} />
     </main>
   );
 };
