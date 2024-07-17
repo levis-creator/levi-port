@@ -1,4 +1,5 @@
 import Blogs from "@/components/Blogs";
+import SearchBar from "@/components/ui/SearchBar";
 import { get_data } from "@/lib/get_data";
 import { ContentType } from "contentful";
 import { Metadata } from "next";
@@ -25,6 +26,7 @@ const Page = async () => {
           </div>
         </div>
       </div>
+      <SearchBar />
       <Blogs />
     </div>
   );
