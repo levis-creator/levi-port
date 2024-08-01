@@ -49,9 +49,6 @@ export async function generateMetadata({
       description: data.description,
       type: "article",
     },
-    twitter: {
-      card: "summary_large_image",
-    },
     alternates: {
       canonical: `/blogs/${id}`,
     },
